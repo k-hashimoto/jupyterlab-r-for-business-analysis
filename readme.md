@@ -1,13 +1,13 @@
 # docker-stack for BI analysis
 
-ビジネスの分析で使うパッケージを含んだdocker images。jupyter公式のdocker-stackは全部入りで便利な反面imageサイズが大きくまた分散処理系のパッケージなどビジネスの分析では使わないこともあるパッケージを含んでいるので出来るだけimageサイズが小さくBIの分析向きのdocker imageが欲しい。機械学習ガチ勢とかは素直にjupyterのdocker-stackとかgoogleのやつとか使った方が無難です
+ビジネスの分析で使うパッケージを含んだdocker images。jupyter公式のdocker-stackは全部入りで便利な反面imageサイズが1GBを越えていて、また分散処理系のパッケージなどビジネスの分析では使わないこともあるパッケージを含んでいるので出来るだけimageサイズが小さくBIの分析向きのdocker imageが欲しい。機械学習ガチ勢は素直にjupyterのdocker-stackとかgoogleのやつとか使った方が無難です
 
-したがって、このdocker-stackは以下の方針で作られています
+まとめると、このdocker-stackは以下の方針で作られています
 
-- imageサイズは出来るだけ小さくする
-- このnotebookはBIの分析用途
+- docker imageのサイズは出来るだけ小さくする
+- このdocker imageはBIの分析用途
 
-## forbi:basic
+## forbi:basic(606MB)
 ### このimageでできること
 - notebook上からathenaにクエリを打ってpandas dataframeで出力する
 - pandasとmatplotlibを使った集計と可視化
