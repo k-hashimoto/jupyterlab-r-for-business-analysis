@@ -7,7 +7,7 @@
 - imageサイズは出来るだけ小さくする
 - このnotebookはBIの分析用途
 
-## basic
+## forbi:basic
 ### このimageでできること
 - notebook上からathenaにクエリを打ってpandas dataframeで出力する
 - pandasとmatplotlibを使った集計と可視化
@@ -25,10 +25,11 @@
 - pandas-profiling(alpine版のみ)
 
 zshrcなどで
-`alias jupyter-minimal='docker run --rm -p 8888:8888 -v $HOME:/root forbi:basic-alpine'`
+`alias jupyter-forbi='docker run --rm -p 8888:8888 -v $HOME:/root forbi:basic-alpine'`
 とすると便利
 
-## time-series(coming soon)
+## Planning
+### time-series(coming soon)
 
 minimalに時系列分析系ライブラリを追加
 
@@ -36,7 +37,7 @@ minimalに時系列分析系ライブラリを追加
 - pykalman
 - statsmodels
 
-## causal-inference(coming soon)
+### causal-inference(coming soon)
 
 minimalに探索的データ分析をやるpandas-profilingや統計モデリング、因果推論あたりを追加
 
@@ -44,12 +45,11 @@ minimalに探索的データ分析をやるpandas-profilingや統計モデリン
 - pycausalimpact
 - dowhy
 
-## bayes(comming soon)
+### bayes(comming soon)
 minimalにベイズ推論をやるパッケージを追加
 
 - pystan
 - pymc3
-
 
 ## ref.
 
