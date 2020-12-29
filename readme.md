@@ -8,6 +8,11 @@
 - このdocker imageはBIの分析用途
 
 ## forbi:basic(606MB)
+
+```
+docker pull khashimoto/forbi:basic-alpine-m1
+```
+
 ### このimageでできること
 - notebook上からathenaにクエリを打ってpandas dataframeで出力する
 - pandasとmatplotlibを使った集計と可視化

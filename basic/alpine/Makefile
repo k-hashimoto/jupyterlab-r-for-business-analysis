@@ -1,2 +1,2 @@
 build:
-	docker build -t forbi:basic-alpine .
+	docker build -t khashimoto/forbi:basic-alpine-m1 .
