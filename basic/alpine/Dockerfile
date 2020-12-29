@@ -1,48 +1,13 @@
-FROM python:3.8-alpine as base
-RUN apk update
-RUN apk --update-cache add \
-	gcc \
-	g++ \
-#	llvm \
-#	zeromq-dev \
-#	libffi-dev \
-#	lapack-dev \
-	openblas-dev \
-	gfortran \
-	musl
-RUN apk --update-cache add python3-dev
+FROM forbi-build-deps:alpine as base
 RUN pip install --upgrade pip  
-RUN pip install --user numpy
-RUN pip install --user scipy 
-RUN apk --update-cache add libffi-dev lapack-dev zeromq-dev llvm
-RUN apk add zlib
-RUN pip install --user scikit-learn 
-RUN apk add zlib-dev jpeg-dev make
-RUN pip install --user matplotlib
-
-RUN pip install --user pandas
-
-RUN pip install --user pyathena
-
-RUN pip install --user jupyter
-# RUN pip install --user \
-# 	numpy==1.14.5 \
-# 	pandas \
-# 	jupyter \
-# 	matplotlib \
-# 	seaborn \
-# 	pyathena \
-# 	scikit-learn
-
-# FROM python:3.8-alpine as app
-# RUN apk update
-# RUN apk add \
-# 	zeromq-dev \
-# 	libffi-dev \
-# 	lapack-dev \
-# 	openblas-dev
-
-RUN apk add llvm-dev
+RUN pip install --user  \ 
+	numpy \ 
+	scipy \ 
+	scikit-learn \ 
+	matplotlib \ 
+	pandas \ 
+	pyathena \ 
+	jupyter
 RUN pip install --user pandas-profiling[notebook]
 
 FROM python:3.8-alpine as app
