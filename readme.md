@@ -33,15 +33,20 @@ zshrcなどで
 `alias jupyter-forbi='docker run --rm -p 8888:8888 -v $HOME:/root khashimoto/forbi:basic-alpine'`
 とすると便利
 
-## Planning
-### time-series(coming soon)
+## forbi:time-series(650MB)
 
-minimalに時系列分析系ライブラリを追加
+basicに時系列分析に使うパッケージを追加
 
 - hmmlearn
 - pykalman
 - statsmodels
 
+zshrcなどで
+`alias jupyter-time-series='docker run --rm -p 8888:8888 -v $HOME:/root khashimoto/forbi:time-series-alpine'`
+とすると便利
+
+
+## Planning
 ### causal-inference(coming soon)
 
 minimalに探索的データ分析をやるpandas-profilingや統計モデリング、因果推論あたりを追加
