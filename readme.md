@@ -30,7 +30,7 @@ docker pull khashimoto/forbi:basic-alpine-m1
 - pandas-profiling(alpine版のみ)
 
 zshrcなどで
-`alias jupyter-forbi='docker run --rm -p 8888:8888 -v $HOME:/root forbi:basic-alpine'`
+`alias jupyter-forbi='docker run --rm -p 8888:8888 -v $HOME:/root khashimoto/forbi:basic-alpine'`
 とすると便利
 
 ## Planning
