@@ -7,12 +7,11 @@
 - docker imageのサイズは出来るだけ小さくする
 - このdocker imageはBIの分析用途
 
-## forbi:basic(606MB)
-
 ```
 docker pull khashimoto/forbi:basic-alpine-m1
 ```
 
+## forbi:basic(606MB)
 ### このimageでできること
 - notebook上からathenaにクエリを打ってpandas dataframeで出力する
 - pandasとmatplotlibを使った集計と可視化
@@ -35,8 +34,10 @@ zshrcなどで
 
 ## forbi:time-series(650MB)
 
-basicに時系列分析に使うパッケージを追加
+### このimageでできること
+- 時系列分析
 
+### インストール済みパッケージ
 - hmmlearn
 - pykalman
 - statsmodels
