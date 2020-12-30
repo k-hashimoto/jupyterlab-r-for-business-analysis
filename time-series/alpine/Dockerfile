@@ -11,7 +11,7 @@ RUN pip install --user  \
     pandas-profiling[notebook]
 RUN pip install --user statsmodels
 
-RUN pip install --user pykalman pykalman
+RUN pip install --user pykalman hmmlearn
 
 FROM python:3.8-alpine as app
 RUN apk add zeromq openblas jpeg llvm-dev
