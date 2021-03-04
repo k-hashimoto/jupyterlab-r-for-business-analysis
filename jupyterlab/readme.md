@@ -7,5 +7,5 @@ docker build -t khashimoto/jupyterlab.
 
 ## Lunch JupyterLab
 ```
-docker run -p 8888:8888 khashimoto/jupyterlab
+docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab
 ```
