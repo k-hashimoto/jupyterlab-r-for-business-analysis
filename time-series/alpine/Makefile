@@ -1,4 +1,4 @@
 build:
-	docker build -t khashimoto/forbi:time-series-alpine-m1 .
+	docker build -t khashimoto/forbi:time-series-alpine .
 push:
-	docker push khashimoto/forbi:time-series-alpine-m1
+	docker push khashimoto/forbi:time-series-alpine
