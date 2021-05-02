@@ -21,6 +21,19 @@ R -e "IRkernel::installspec()" && \
 R -e "install.packages(c('tidyverse', 'lubridate', 'httr', 'jsonlite'),  dependencies=TRUE,repos = 'http://cran.us.r-project.org')" 
 
 
+RUN apt-get update \
+    && apt-get install -y locales \
+    && locale-gen ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
+ENV LC_ALL=ja_JP.UTF-8
+RUN localedef -f UTF-8 -i ja_JP ja_JP.utf8
+
+# 日本語フォントをインストール
+RUN apt-get update && apt-get install -y \
+  fonts-ipaexfont \
+	fonts-noto-cjk
+
 WORKDIR /home/jupyter/
 #start jupyterlab without password or token
 RUN jupyter notebook --generate-config \
