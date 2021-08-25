@@ -1,12 +1,12 @@
 FROM forbi-build-deps:alpine as base
-RUN pip install --upgrade pip  
-RUN pip install --user  \ 
-	numpy \ 
-	scipy \ 
-	scikit-learn \ 
-	matplotlib \ 
-	pandas \ 
-	pyathena \ 
+RUN pip install --upgrade pip
+RUN pip install --user  \
+	numpy \
+	scipy \
+	scikit-learn \
+	matplotlib \
+	pandas \
+	pyathena \
 	jupyter
 RUN pip install --user pandas-profiling[notebook]
 

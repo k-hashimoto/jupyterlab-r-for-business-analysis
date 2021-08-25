@@ -45,7 +45,11 @@ docker pull khashimoto/jupyterlab-bayes
 - ggfortify
 - gridExtra
 
+*run jupyterLab*
+```
+docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
+```
 
-## slim-stack
+## alpine
 
-alipe based very low size images. see readme
+alipe based very low size images. no longer maintained.
