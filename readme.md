@@ -15,16 +15,17 @@ docker pull khashimoto/jupyterlab-minimal
 *installed packages for R*
 
 - tidyverse
+- tidylog
 - lubridate
 - httr
 - jsonlite
-- data.tree
 - gtsummary
 
 *installed packages for python*
 
 - numpy
 - pandas
+- matplotlib
 
 ### bayes
 
