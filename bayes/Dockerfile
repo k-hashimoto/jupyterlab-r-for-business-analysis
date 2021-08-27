@@ -1,6 +1,6 @@
 FROM khashimoto/jupyterlab-minimal
 RUN apt install libv8-dev -y
-RUN R -e "install.packages(c('rstan','bayesplot', 'ggfortify', 'gridExtra'), dependencies=TRUE,repos = 'http://cloud.r-project.org/')" 
+RUN R -e "install.packages(c('rstan','bayesplot', 'ggfortify', 'gridExtra'), dependencies=TRUE,repos = 'http://cloud.r-project.org/')"
 
 #WORKDIR /home/jupyter/
 ##start jupyterlab without password or token
