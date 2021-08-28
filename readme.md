@@ -54,3 +54,13 @@ docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
 
 ## slim
 low size images
+
+## options
+
+### line number
+
+As default, line number of notebook is enabled.
+
+### dark mode
+
+if you want to enable dark mode forever, erase comment out at end of minimal/Dockerfile and rebuild image.
