@@ -1,7 +1,7 @@
 build:
-	docker build -t khashimoto/jupyterlab-trial-python .
-	docker images | grep jupyterlab-trial-python
+	docker build -t khashimoto/jupyterlab-python-slim-minimal .
+	docker images | grep jupyterlab-python-slim-minimal
 push:
-	docker push khashimoto/jupyterlab-trial-python
+	docker push khashimoto/jupyterlab-python-slim-minimal
 run:
-	docker run -d -p 8888:8888 -v $(HOME):/home/jupyter/ khashimoto/jupyterlab-trial-python
+	docker run -d -p 8888:8888 -v $(HOME):/home/jupyter/ khashimoto/jupyterlab-python-slim-minimal

@@ -50,6 +50,5 @@ docker pull khashimoto/jupyterlab-bayes
 docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
 ```
 
-## alpine
-
+## slim
 alipe based very low size images. no longer maintained.

@@ -17,14 +17,11 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 RUN R -e "install.packages('devtools')" && \
-	R -e "devtools::install_github('IRkernel/IRkernel')" && \
+	R -e "install.packages('IRkernel')" && \
+	# R -e "devtools::install_github('IRkernel/IRkernel')" && \
 	R -e "IRkernel::installspec()" && \
 	R -e "install.packages(c('tidyverse', 'lubridate', 'httr', 'jsonlite', 'tidylog','gtsummary'),  dependencies=TRUE, repos = 'http://cran.us.r-project.org')"
 
-
-# ENV PATH="/opt/venv/bin:$PATH"
-# COPY requirements.txt .
-# RUN pip install -r requirements.txt
 
 FROM python:3.7-slim AS build-image
 RUN apt-get update && \
@@ -53,4 +50,4 @@ WORKDIR /home/jupyter/
 RUN jupyter notebook --generate-config \
 	&& echo "c.NotebookApp.token = u''" >> ~/.jupyter/jupyter_notebook_config.py \
 	echo "export PATH=$PATH:/.local/bin/jupyter-notebook >> ~/.profile"
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]
