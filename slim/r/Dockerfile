@@ -50,4 +50,16 @@ WORKDIR /home/jupyter/
 RUN jupyter notebook --generate-config \
 	&& echo "c.NotebookApp.token = u''" >> ~/.jupyter/jupyter_notebook_config.py \
 	echo "export PATH=$PATH:/.local/bin/jupyter-notebook >> ~/.profile"
+
+# show line number as default
+RUN  mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/notebook-extension && \
+	echo '{"codeCellConfig": {"lineNumbers": true}}' > \
+  	~/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings
+
+# enable dark mode
+# if you want swich dark mode, erase these comment out and build image.
+# RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
+# 	echo '{"theme":"JupyterLab Dark"}' > \
+#   	~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]
