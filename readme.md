@@ -1,67 +1,66 @@
-# docker-stack for BI analysis
+# jupyterlab + R for business analysis
 
-ビジネスの分析で使うパッケージを含んだdocker images。jupyter公式のdocker-stackは全部入りで便利な反面imageサイズが1GBを越えていて、また分散処理系のパッケージなどビジネスの分析では使わないこともあるパッケージを含んでいるので出来るだけimageサイズが小さくBIの分析向きのdocker imageが欲しい。機械学習ガチ勢は素直にjupyterのdocker-stackとかgoogleのやつとか使った方が無難です
+This repository is for docker image which contain jupyterlab and R
 
-まとめると、このdocker-stackは以下の方針で作られています
+## jupyterlab
 
-- docker imageのサイズは出来るだけ小さくする
-- このdocker imageはBIの分析用途
+### minimal
+
+minimal image for R and python with jupyterlab
+
+*deploy on local*
 
 ```
-docker pull khashimoto/forbi:basic-alpine-m1
+docker pull khashimoto/jupyterlab-minimal
 ```
 
-## forbi:basic(606MB)
-### このimageでできること
-- notebook上からathenaにクエリを打ってpandas dataframeで出力する
-- pandasとmatplotlibを使った集計と可視化
-- scikit-learnを使った分析
-- pandas-profilingを使った探索的データ分析(alpine版のみ)
+*installed packages for R*
 
-### インストール済みパッケージ
+- tidyverse
+- tidylog
+- lubridate
+- httr
+- jsonlite
+- gtsummary
+
+*installed packages for python*
+
 - numpy
 - pandas
 - matplotlib
-- pyathena
-- jupyter
-- scikit-learn
-- pyathena
-- pandas-profiling(alpine版のみ)
 
-zshrcなどで
-`alias jupyter-forbi='docker run --rm -p 8888:8888 -v $HOME:/root khashimoto/forbi:basic-alpine'`
-とすると便利
+### bayes
 
-## forbi:time-series(650MB)
+for bayes analysis
 
-### このimageでできること
-- 時系列分析
+*deploy on local*
 
-### インストール済みパッケージ
-- hmmlearn
-- pykalman
-- statsmodels
+```
+docker pull khashimoto/jupyterlab-bayes
+```
 
-zshrcなどで
-`alias jupyter-time-series='docker run --rm -p 8888:8888 -v $HOME:/root khashimoto/forbi:time-series-alpine'`
-とすると便利
+*installed packages for R*
 
+- (packages in minimal)
+- rstan
+- bayesplot
+- ggfortify
+- gridExtra
 
-## Planning
-### causal-inference(coming soon)
+*run jupyterLab*
+```
+docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
+```
 
-minimalに探索的データ分析をやるpandas-profilingや統計モデリング、因果推論あたりを追加
+## slim
+low size images
 
-- statsmodels
-- pycausalimpact
-- dowhy
+## options
 
-### bayes(comming soon)
-minimalにベイズ推論をやるパッケージを追加
+### line number
 
-- pystan
-- pymc3
+As default, line number of notebook is enabled.
 
-## ref.
+### dark mode
 
-- [jupyter公式のdocker-stacks](https://github.com/jupyter/docker-stacks)
+if you want to enable dark mode forever, erase comment out at end of minimal/Dockerfile and rebuild image.
