@@ -51,4 +51,4 @@ docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
 ```
 
 ## slim
-alipe based very low size images. no longer maintained.
+low size images

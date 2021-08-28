@@ -16,3 +16,7 @@ image size : 450MB
 docker pull khashimoto/jupyterlab-python-slim-minimal
 ```
 
+
+### aline
+
+no longer maintained
