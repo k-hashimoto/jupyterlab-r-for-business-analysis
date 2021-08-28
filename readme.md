@@ -1,4 +1,6 @@
-# Docker images for business analysis
+# jupyterlab + R for business analysis
+
+This repository is for docker image which contain jupyterlab and R
 
 ## jupyterlab
 
