@@ -28,6 +28,7 @@ RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
 	r-base \
 	libxml2-dev \
+	git \
 	locales && locale-gen ja_JP.UTF-8
 
 ENV PATH="/opt/venv/bin:$PATH"
@@ -36,7 +37,7 @@ COPY --from=compile-image /usr/local/lib/R/site-library /usr/local/lib/R/site-li
 COPY --from=compile-image /usr/lib/R/site-library /usr/lib/R/site-library
 COPY --from=compile-image /usr/lib/R/library /usr/lib/R/library
 
-RUN	R -e "install.packages('IRkernel')" && \
+RUN	R -e "install.packages(c('IRkernel','rmarkdown'))" && \
 	R -e "IRkernel::installspec()"
 
 ENV LANG ja_JP.UTF-8
@@ -66,5 +67,6 @@ RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/notebook-extension && \
 # RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
 # 	echo '{"theme":"JupyterLab Dark"}' > \
 #   	~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+ADD .Rprofile /home/jupyter/
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]
