@@ -14,6 +14,13 @@ minimal image for R and python with jupyterlab
 docker pull khashimoto/jupyterlab-minimal
 ```
 
+or
+
+```
+docker pull khashimoto/jupyterlab-slim-minimal
+```
+
+
 *installed packages for R*
 
 - tidyverse
