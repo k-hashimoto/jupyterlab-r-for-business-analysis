@@ -28,6 +28,7 @@ RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
 	r-base \
 	libxml2-dev \
+	git \
 	locales && locale-gen ja_JP.UTF-8
 
 ENV PATH="/opt/venv/bin:$PATH"
@@ -43,28 +44,14 @@ ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
 ENV LC_ALL=ja_JP.UTF-8
 RUN localedef -f UTF-8 -i ja_JP ja_JP.utf8
-WORKDIR /home/jupyter/
+WORKDIR /root
 
 #start jupyterlab without password or token
 
-RUN jupyter notebook --generate-config \
-	&& echo "c.NotebookApp.token = u''" >> ~/.jupyter/jupyter_notebook_config.py \
-	echo "export PATH=$PATH:/.local/bin/jupyter-notebook >> ~/.profile"
+ADD setup.sh /root/
+ADD .Rprofile /root/
+RUN ./setup.sh
 
-# custum settings
-# 1. show line number as default
-# 2. change terminal font
-RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/notebook-extension && \
-	echo '{"codeCellConfig": {"lineNumbers": true}}' > \
-  	~/.jupyter/lab/user-settings/@jupyterlab/notebook-extension/tracker.jupyterlab-settings && \
-	mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/terminal-extension/ && \
-	echo '{"fontFamily": "Monaco"}' > \
-	~/.jupyter/lab/user-settings/@jupyterlab/terminal-extension/plugin.jupyterlab-settings
-
-# enable dark mode
-# if you want swich dark mode, erase these comment out and build image.
-# RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
-# 	echo '{"theme":"JupyterLab Dark"}' > \
-#   	~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+WORKDIR /home/jupyter
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]

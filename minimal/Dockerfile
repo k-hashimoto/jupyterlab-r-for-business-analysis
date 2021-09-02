@@ -12,6 +12,7 @@ RUN apt-get clean && \
 	curl \
 	make \
 	r-base \
+	git \
 	fonts-ipaexfont \
 	fonts-noto-cjk \
 	locales && locale-gen ja_JP.UTF-8
@@ -24,7 +25,7 @@ RUN localedef -f UTF-8 -i ja_JP ja_JP.utf8
 RUN MAKE='make -j 25'  \
 	pip install jupyter \
 	&& pip install jupyterlab \
-	&& pip install numpy pandas matplotlib
+	&& pip install numpy pandas matplotlib jupyterlab-git
 
 RUN R -e "install.packages('devtools')" && \
 R -e "devtools::install_github('IRkernel/IRkernel')" && \
@@ -53,5 +54,7 @@ RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/notebook-extension && \
 # RUN mkdir -p ~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension && \
 # 	echo '{"theme":"JupyterLab Dark"}' > \
 #   	~/.jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+
+ADD .Rprofile /home/jupyter/
 
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]
