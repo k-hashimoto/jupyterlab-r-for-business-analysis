@@ -52,4 +52,6 @@ ADD setup.sh /root/
 ADD .Rprofile /root/
 RUN ./setup.sh
 
+WORKDIR /home/jupyter
+
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token="]
