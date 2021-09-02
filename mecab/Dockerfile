@@ -17,3 +17,4 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
 WORKDIR /root
 ADD requirements.txt /root
 RUN pip install -r requirements.txt
+WORKDIR /home/mecab

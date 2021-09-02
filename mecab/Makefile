@@ -1,8 +1,6 @@
 build:
-	docker build -t khashimoto/rmecab .
+	docker build -t khashimoto/mecab-python .
 push:
-	docker push khashimoto/rmecab
+	docker push khashimoto/mecab-python
 run:
-	docker run --rm -it -v $(CURDIR):/home/mecab/ khashimoto/rmecab bash
-#run:
-#	docker run -d -p 8888:8888 -v $(HOME):/home/jupyter/ khashimoto/jupyterlab-minimal
+	docker run --rm -it -v $(CURDIR):/home/mecab/ khashimoto/mecab-python bash
