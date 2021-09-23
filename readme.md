@@ -11,7 +11,8 @@ minimal image for R and python with jupyterlab
 *deploy on local*
 
 ```
-docker pull khashimoto/jupyterlab-minimal
+intel mac => docker pull khashimoto/jupyterlab-minimal:x86_64
+m1 mac => pull khashimoto/jupyterlab-minimal:arm64
 ```
 
 or
