@@ -15,13 +15,6 @@ intel mac => docker pull khashimoto/jupyterlab-minimal:x86_64
 m1 mac => pull khashimoto/jupyterlab-minimal:arm64
 ```
 
-or
-
-```
-docker pull khashimoto/jupyterlab-slim-minimal
-```
-
-
 *installed packages for R*
 
 - tidyverse
@@ -46,6 +39,11 @@ for bayes analysis
 ```
 docker pull khashimoto/jupyterlab-bayes
 ```
+```
+intel mac => docker pull khashimoto/jupyterlab-bayes:x86_64
+m1 mac => pull khashimoto/jupyterlab-bayes:arm64
+```
+
 
 *installed packages for R*
 
