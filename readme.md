@@ -37,9 +37,6 @@ for bayes analysis
 *deploy on local*
 
 ```
-docker pull khashimoto/jupyterlab-bayes
-```
-```
 intel mac => docker pull khashimoto/jupyterlab-bayes:x86_64
 m1 mac => pull khashimoto/jupyterlab-bayes:arm64
 ```
