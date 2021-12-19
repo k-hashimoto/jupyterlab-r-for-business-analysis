@@ -30,6 +30,27 @@ m1 mac => pull khashimoto/jupyterlab-minimal:arm64
 - pandas
 - matplotlib
 
+### kaggle
+
+minimal image for kaggle.
+
+*installed packages*
+- (packages in minimal)
+- kaggle cli
+- seaborn
+
+*deploy on local*
+```
+m1 mac => docker pull khashimoto/jupyterlab-kaggle:arm64
+```
+
+*run jupyterLab*
+
+```
+docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
+docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:x86_64
+```
+
 ### bayes
 
 for bayes analysis
@@ -41,7 +62,6 @@ intel mac => docker pull khashimoto/jupyterlab-bayes:x86_64
 m1 mac => pull khashimoto/jupyterlab-bayes:arm64
 ```
 
-
 *installed packages for R*
 
 - (packages in minimal)
@@ -50,10 +70,6 @@ m1 mac => pull khashimoto/jupyterlab-bayes:arm64
 - ggfortify
 - gridExtra
 
-*run jupyterLab*
-```
-docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
-```
 
 ## slim
 low size images
