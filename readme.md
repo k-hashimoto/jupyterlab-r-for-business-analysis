@@ -30,6 +30,13 @@ m1 mac => pull khashimoto/jupyterlab-minimal:arm64
 - pandas
 - matplotlib
 
+
+```
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal:arm64
+
+```
+
 ### kaggle
 
 minimal image for kaggle.
@@ -38,6 +45,8 @@ minimal image for kaggle.
 - (packages in minimal)
 - kaggle cli
 - seaborn
+- lightgbm
+- scikit-learn
 
 *deploy on local*
 ```
@@ -48,7 +57,6 @@ m1 mac => docker pull khashimoto/jupyterlab-kaggle:arm64
 
 ```
 docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
-docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:x86_64
 ```
 
 ### bayes
