@@ -50,13 +50,16 @@ minimal image for kaggle.
 
 *deploy on local*
 ```
+intel mac => docker pull khashimoto/jupyterlab-kaggle:x86_64
 m1 mac => docker pull khashimoto/jupyterlab-kaggle:arm64
+
 ```
 
 *run jupyterLab*
 
 ```
-docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
 ```
 
 ### bayes
