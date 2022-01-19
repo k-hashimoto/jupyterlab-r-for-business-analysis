@@ -37,6 +37,26 @@ m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterla
 
 ```
 
+### minimal-python
+
+minimal image for python with jupyterlab(without R kernel)
+
+*installed packages for python*
+
+- jupyterlab
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- jupyterlab-git
+- scikit-learn
+
+```
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal-python:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal-python:arm64
+
+```
+
 ### kaggle
 
 minimal image for kaggle.
@@ -81,9 +101,6 @@ m1 mac => pull khashimoto/jupyterlab-bayes:arm64
 - ggfortify
 - gridExtra
 
-
-## slim
-low size images
 
 ## options
 
