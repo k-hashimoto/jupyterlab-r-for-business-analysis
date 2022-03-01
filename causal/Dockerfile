@@ -1,5 +1,5 @@
 FROM khashimoto/jupyterlab-minimal
-RUN R -e "install.packages(c('MatchIt'), dependencies=TRUE,repos = 'http://cloud.r-project.org/')"
+RUN R -e "install.packages(c('markmfredrickson/optmatch', 'MatchIt'), dependencies=TRUE,repos = 'http://cloud.r-project.org/')"
 
 #WORKDIR /home/jupyter/
 ##start jupyterlab without password or token
