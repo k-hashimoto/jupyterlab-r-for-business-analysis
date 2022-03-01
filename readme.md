@@ -37,6 +37,26 @@ m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterla
 
 ```
 
+### minimal-python
+
+minimal image for python with jupyterlab(without R kernel)
+
+*installed packages for python*
+
+- jupyterlab
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- jupyterlab-git
+- scikit-learn
+
+```
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal-python:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal-python:arm64
+
+```
+
 ### kaggle
 
 minimal image for kaggle.
@@ -62,6 +82,15 @@ intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyte
 m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
 ```
 
+### causal
+
+for causal inference
+
+*installed packages for R*
+
+- MatchIt
+
+
 ### bayes
 
 for bayes analysis
@@ -81,9 +110,6 @@ m1 mac => pull khashimoto/jupyterlab-bayes:arm64
 - ggfortify
 - gridExtra
 
-
-## slim
-low size images
 
 ## options
 
