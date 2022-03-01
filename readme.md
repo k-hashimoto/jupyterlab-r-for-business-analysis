@@ -82,6 +82,15 @@ intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyte
 m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
 ```
 
+### causal
+
+for causal inference
+
+*installed packages for R*
+
+- MatchIt
+
+
 ### bayes
 
 for bayes analysis
