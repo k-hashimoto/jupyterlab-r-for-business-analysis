@@ -1,2 +1,2 @@
-FROM khashimoto/jupyterlab-minimal
-RUN pip install kaggle seaborn scikit-learn lightgbm
+FROM khashimoto/jupyterlab-minimal-base
+RUN pip install lightgbm
