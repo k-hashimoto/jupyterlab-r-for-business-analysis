@@ -15,6 +15,7 @@ RUN apt-get clean && \
 	git \
 	fonts-ipaexfont \
 	fonts-noto-cjk \
+	gcc \
 	locales && locale-gen ja_JP.UTF-8
 
 ENV LANG ja_JP.UTF-8

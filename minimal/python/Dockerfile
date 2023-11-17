@@ -6,7 +6,7 @@ RUN pip install -r requirements.txt
 WORKDIR /home/jupyter/
 
 # start jupyterlab without password or token
-RUN jupyter notebook --generate-config \
+RUN jupyter lab --generate-config \
 	&& echo "c.NotebookApp.token = u''" >> ~/.jupyter/jupyter_notebook_config.py \
 	echo "export PATH=$PATH:/.local/bin/jupyter-notebook >> ~/.profile"
 
