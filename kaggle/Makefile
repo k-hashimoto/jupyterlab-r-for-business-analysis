@@ -1,5 +1,5 @@
 build:
-	docker build -t khashimoto/jupyterlab-kaggle:$(shell uname -m) .
+	docker build -t khashimoto/jupyterlab-kaggle:$(shell uname -m) --build-arg ARCH=$(shell uname -m) .
 push:
 	docker push khashimoto/jupyterlab-kaggle:$(shell uname -m)
 run:

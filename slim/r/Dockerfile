@@ -37,7 +37,7 @@ COPY --from=compile-image /usr/local/lib/R/site-library /usr/local/lib/R/site-li
 COPY --from=compile-image /usr/lib/R/site-library /usr/lib/R/site-library
 COPY --from=compile-image /usr/lib/R/library /usr/lib/R/library
 
-RUN	R -e "install.packages('IRkernel')" && \
+RUN R -e "install.packages('IRkernel')" && \
 	R -e "IRkernel::installspec()"
 
 ENV LANG ja_JP.UTF-8

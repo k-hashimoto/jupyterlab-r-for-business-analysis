@@ -1,4 +1,4 @@
-FROM python:3.8.11-slim-bullseye
+FROM python:3.11.3-slim-bullseye
 RUN apt-get clean && \
 	apt-get update && \
 	apt-get install -y \
@@ -7,6 +7,7 @@ RUN apt-get clean && \
 	libxml2-dev \
 	libssl-dev \
 	libgit2-dev \
+	libgomp1 \
 	git-core \
 	default-jdk \
 	curl \

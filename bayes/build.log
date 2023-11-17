@@ -1,0 +1,42 @@
+docker build -t khashimoto/jupyterlab-bayes:x86_64 .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:666f3e5b530e597a765fa7e70270814ac508b356cf9dc673cbd5c2b4e2c0efe2
+#1 transferring dockerfile: 963B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:3d9652db22c0e0569d2333f6bfc5e0adfd1d7a2a2fdd2893e299a7b03f8d9944
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/khashimoto/jupyterlab-minimal:latest
+#3 sha256:1561ca369d600a4f18ae2c4c82f36d2a64696040b0c672e1a472c8ff8153a9b0
+#3 ...
+
+#4 [auth] khashimoto/jupyterlab-minimal:pull token for registry-1.docker.io
+#4 sha256:abe0cac82f48046cea12357356eb5b7b7a82d447def98564cd37b557c6be1e21
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/khashimoto/jupyterlab-minimal:latest
+#3 sha256:1561ca369d600a4f18ae2c4c82f36d2a64696040b0c672e1a472c8ff8153a9b0
+#3 DONE 3.3s
+
+#5 [1/3] FROM docker.io/khashimoto/jupyterlab-minimal@sha256:c65831fc2cc86a6f90eb8b1012e642422723e85982117dc18ed7ee3d54ff86c0
+#5 sha256:952585752f1c93908dab7a29cfc63064b328d568413f014ef4a5ef449aad1f60
+#5 DONE 0.0s
+
+#6 [2/3] RUN apt update && apt install libv8-dev -y
+#6 sha256:d3c5ecc2d2a2e2ebe313931b7a8f41bdaca0a163067cb2a650dee5c129421b1b
+#6 CACHED
+
+#7 [3/3] RUN R -e "install.packages('shinystan')"
+#7 sha256:b176827bd46afef4d13c8856a83bca8b24e273b4848a36522061143524ee2900
+#7 CACHED
+
+#8 exporting to image
+#8 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#8 exporting layers done
+#8 writing image sha256:4a92a6f4b2350fabfa4e1c7ba119762357eafaa1bd9d20b60fde37b836d99cc8
+#8 writing image sha256:4a92a6f4b2350fabfa4e1c7ba119762357eafaa1bd9d20b60fde37b836d99cc8 done
+#8 naming to docker.io/khashimoto/jupyterlab-bayes:x86_64 done
+#8 DONE 0.0s

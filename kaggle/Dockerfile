@@ -1,2 +1,3 @@
-FROM khashimoto/jupyterlab-minimal-base
-RUN pip install lightgbm
+ARG ARCH
+FROM khashimoto/jupyterlab-minimal-python:$ARCH
+RUN pip install lightgbm kaggle

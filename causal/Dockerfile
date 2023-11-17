@@ -1,5 +1,6 @@
 FROM khashimoto/jupyterlab-minimal
 RUN R -e "install.packages(c('markmfredrickson/optmatch', 'MatchIt'), dependencies=TRUE,repos = 'http://cloud.r-project.org/')"
+RUN R -e "install.packages(c('CausalImpact'))"
 
 #WORKDIR /home/jupyter/
 ##start jupyterlab without password or token
