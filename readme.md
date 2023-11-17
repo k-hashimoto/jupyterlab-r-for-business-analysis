@@ -11,15 +11,9 @@ minimal image for R and python with jupyterlab
 *deploy on local*
 
 ```
-docker pull khashimoto/jupyterlab-minimal
+intel mac => docker pull khashimoto/jupyterlab-minimal:x86_64
+m1 mac => pull khashimoto/jupyterlab-minimal:arm64
 ```
-
-or
-
-```
-docker pull khashimoto/jupyterlab-slim-minimal
-```
-
 
 *installed packages for R*
 
@@ -36,6 +30,67 @@ docker pull khashimoto/jupyterlab-slim-minimal
 - pandas
 - matplotlib
 
+
+```
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal:arm64
+
+```
+
+### minimal-python
+
+minimal image for python with jupyterlab(without R kernel)
+
+*installed packages for python*
+
+- jupyterlab
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- jupyterlab-git
+- scikit-learn
+
+```
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal-python:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-minimal-python:arm64
+
+```
+
+### kaggle
+
+minimal image for kaggle.
+
+*installed packages*
+- (packages in minimal)
+- kaggle cli
+- seaborn
+- lightgbm
+- scikit-learn
+
+*deploy on local*
+```
+intel mac => docker pull khashimoto/jupyterlab-kaggle:x86_64
+m1 mac => docker pull khashimoto/jupyterlab-kaggle:arm64
+
+```
+
+*run jupyterLab*
+
+```
+intel mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:x86_64
+m1 mac => docker run -d -p 8888:8888 -v $HOME:/home/jupyter khashimoto/jupyterlab-kaggle:arm64
+```
+
+### causal
+
+for causal inference
+
+*installed packages for R*
+
+- MatchIt
+
+
 ### bayes
 
 for bayes analysis
@@ -43,7 +98,8 @@ for bayes analysis
 *deploy on local*
 
 ```
-docker pull khashimoto/jupyterlab-bayes
+intel mac => docker pull khashimoto/jupyterlab-bayes:x86_64
+m1 mac => pull khashimoto/jupyterlab-bayes:arm64
 ```
 
 *installed packages for R*
@@ -54,13 +110,6 @@ docker pull khashimoto/jupyterlab-bayes
 - ggfortify
 - gridExtra
 
-*run jupyterLab*
-```
-docker run -d -p 8888:8888 -v `pwd`:/home/jupyter/ khashimoto/jupyterlab-minimal
-```
-
-## slim
-low size images
 
 ## options
 
