@@ -2,6 +2,7 @@ jupyterlab
 numpy
 pandas
 matplotlib
+japanize-matplotlib
 seaborn
 jupyterlab-git
 scikit-learn
